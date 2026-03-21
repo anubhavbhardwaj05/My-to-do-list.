@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+body {
+    background: radial-gradient(circle at top right, #2c3e50, #000000);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Card Container */
+.col-sm-5 {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 
+                inset 0 0 20px rgba(255, 255, 255, 0.02);
+    max-width: 450px;
+    width: 90%;
+}
+
+/* Heading with Neon Effect */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+    color: #fff !important;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Stylish Input Box */
+#usertast {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 18px 25px;
+    color: #00ffcc;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 5px;
+}
+
+#usertast:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #00ffcc;
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.2);
+    outline: none;
+    transform: scale(1.02);
+}
+
+#usertast::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+}
+
+/* Main ADD Button */
+.btn.my-3 {
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(135deg, #00ffcc 0%, #0072ff 100%);
+    border: none;
+    border-radius: 20px;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 255, 204, 0.2);
+}
+
+.btn.my-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 255, 204, 0.4);
+    filter: brightness(1.2);
+}
+
+/* List Container */
+#taskadd {
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+#taskadd::-webkit-scrollbar {
+    width: 5px;
+}
+#taskadd::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* List Item Styling */
+#taskadd li {
+    background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.4s ease-out forwards;
+    transition: 0.3s;
+}
+
+#taskadd li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 255, 204, 0.3);
+    transform: translateX(10px);
+}
+
+/* Remove Button inside List */
+#taskadd li button {
+    background: rgba(255, 75, 92, 0.1);
+    border: 1px solid rgba(255, 75, 92, 0.3);
+    color: #ff4b5c;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+#taskadd li button:hover {
+    background: #ff4b5c;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 75, 92, 0.4);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+
+
+/* Final fix for Autofill Background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    /* 1. Ye background ko gayab kar dega aur uski jagah glass color dikhayega */
+    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important; 
+    
+    /* 2. Text color ko hamesha aqua rakhega */
+    -webkit-text-fill-color: #00ffcc !important;
+    
+    /* 3. Border ko transparent ya apne theme ke hisaab se rakhega */
+    border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+    
+    /* 4. Font ko barabar rakhega */
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Transition lagane se sudden white flash nahi ayega */
+input {
+    transition: background-color 5000s ease-in-out 0s;
+}
